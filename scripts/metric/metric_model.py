@@ -2,7 +2,7 @@ import torch
 import cv2
 import numpy as np
 import sys
-sys.path.append('/data/wuke/workspace/VINGS-Mono/submodules/')
+sys.path.append('/home/lumen/workspace/noetic_ws/vings_ws/src/VINGS-Mono/submodules/')
 from metric_modules import Metric
 # from metric.metric3d import Metric3D_Model
 
@@ -24,8 +24,8 @@ class Metric_Model:
         '''
         import os
         ckpt_path = 'ckpts/metric_depth_vit_small_800k.pth'
-        # self.predictor = Metric(checkpoint='/data/wuke/workspace/droid_metric/weights/metric_depth_vit_small_800k.pth', model_name='v2-S')
-        self.predictor = Metric(checkpoint=ckpt_path, model_name='v2-S')
+        self.predictor = Metric(checkpoint='/home/lumen/workspace/noetic_ws/vings_ws/src/VINGS-Mono/ckpts/metric_depth_vit_small_800k.pth', model_name='v2-S')
+        #self.predictor = Metric(checkpoint=ckpt_path, model_name='v2-S')
         if u_scale is None:
             # u_scale, v_scale = self.cfg['frontend']['image_size'][0]/self.cfg['intrinsic']['H'], self.cfg['frontend']['image_size'][1]/self.cfg['intrinsic']['W']
             u_scale, v_scale = 1.0, 1.0
